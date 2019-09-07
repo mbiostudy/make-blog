@@ -9,14 +9,14 @@
 ```
 병신같은 부분은 맘껏 변경 가능. images 폴더에 키노트 있음
 ```
-![Alt text](./images/devBlueprint.png)
+![Alt text](./ztc/images/devBlueprint.png)
 
 ### 3. 배포 구상도
 ```
 역시나 병신같은 부분은 맘껏 변경 가능. images 폴더에 키노트 있음
 젠킨스는 고민좀 해봐야 될듯
 ```
-![Alt text](./images/cicd_blueprint.png)
+![Alt text](./ztc/images/cicd_blueprint.png)
 
 ### 4. 역할 분배
 - client : 이상준
