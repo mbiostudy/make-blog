@@ -25,5 +25,16 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Build Image
+```
+SNAPSHOT : make build-SNAPSHOT TAG={version}
+
+PROD : make build-prod TAG={version}
+```
+
+### Deploy Image
+```
+SNAPSHOT : make push-SNAPSHOT TAG={version}
+
+PROD : make push-prod TAG={version}
+```
