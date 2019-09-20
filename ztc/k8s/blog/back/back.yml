@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: back
+  labels:
+    app: back-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    name: http
+    targetPort: 8080
+  selector:
+    app: back
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: back
+  labels:
+    app: back-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: back
+  template:
+    metadata:
+      labels:
+        app: back
+    spec:
+      containers:
+      - name: back
+        imagePullPolicy: Always
+        image: mbiostudyregistry.azurecr.io/blog:1.0.0-SNAPSHOT
+        resources:
+          limits:
+            memory: "768Mi"
+            cpu: "1"
+        ports:
+        - containerPort: 8080
+          name: app-port

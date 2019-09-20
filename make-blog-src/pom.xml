@@ -18,7 +18,7 @@
   <properties>
     <java.version>1.8</java.version>
     <dockerfile.maven.version>1.4.7</dockerfile.maven.version>
-    <docker.repository.prefix>40.76.74.42:5000</docker.repository.prefix>
+    <docker.repository.prefix>mbiostudyregistry.azurecr.io</docker.repository.prefix>
   </properties>
 
   <dependencies>

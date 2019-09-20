@@ -1,6 +1,6 @@
 .PHONY:	build-SNAPSHOT build-prod push-SNAPSHOT push-prod rm
 
-PREFIX = 40.76.74.42:5000
+PREFIX = mbiostudyregistry.azurecr.io
 IMAGE = make-blog-front
 TAG = 1.0
 
