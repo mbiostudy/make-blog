@@ -11,5 +11,5 @@ mvn clean deploy -Dmaven.test.skip=true
 
 OR
 
-docker push 40.76.74.42:5000/blog:{version}
+docker push mbiostudyregistry.azurecr.io/blog:{version}
 ```
