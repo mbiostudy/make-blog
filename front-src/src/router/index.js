@@ -34,6 +34,17 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/post/:id?',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/detailPost/index')
+      }
+    ]
+  },
+  {
     path: '/write',
     component: Layout,
     meta: { title: '글작성' },

@@ -33,8 +33,23 @@ export function filterAsyncRoutes(routes, roles) {
   return res
 }
 
+/**
+ * generate Menu Item
+ * @param routes routes
+ */
+export function generateMenus(routes) {
+  const res = []
+  routes.forEach(route => {
+    if (!route.hidden && route.meta) {
+      res.push(route)
+    }
+  })
+  return res
+}
+
 const state = {
   routes: [],
+  menus: [],
   addRoutes: []
 }
 
@@ -42,6 +57,7 @@ const mutations = {
   SET_ROUTES: (state, routes) => {
     state.addRoutes = routes
     state.routes = constantRoutes.concat(routes)
+    state.menus = generateMenus(constantRoutes).concat(generateMenus(routes))
   }
 }
 
