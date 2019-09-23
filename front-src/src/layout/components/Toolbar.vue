@@ -1,6 +1,6 @@
 <template>
   <v-app-bar app flat class="grey lighten-5">
-    <v-app-bar-nav-icon class="hidden-md-and-up" @click="toggleDrawer" />
+    <v-app-bar-nav-icon class="hidden-md-and-up" @click="handleDrawer" />
     <v-container mx-auto py-0>
       <v-layout>
         <router-link to="/">
@@ -13,12 +13,10 @@
             max-width="48"
           />
         </router-link>
-        <ToolbarItem
-          v-for="route in permission_routes"
-          :key="route.path"
-          :item="route"
-          :base-path="route.path"
-        />
+        <span v-for="route in menus" :key="route.path">
+          <v-btn :to="route.path" class="ml-0 hidden-sm-and-down" text>{{ route.meta.title }}</v-btn>
+        </span>
+
         <v-spacer />
         <v-text-field
           append-icon="mdi-magnify"
@@ -33,21 +31,16 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
-import ToolbarItem from './ToolbarItem'
-import path from 'path'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Toolbar',
-  components: {
-    ToolbarItem
-  },
   computed: {
-    ...mapGetters(['permission_routes'])
+    ...mapGetters(['menus'])
   },
   methods: {
-    ...mapMutations(['toggleDrawer']),
-    resolvePath(routePath) {
-      return path.resolve(this.basePath, routePath)
+    handleDrawer() {
+      this.$store.dispatch('app/toggleDrawer')
     }
   }
 }

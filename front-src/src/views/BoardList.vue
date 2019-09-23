@@ -1,13 +1,15 @@
 <template>
-  <v-container fluid grid-list-xl justify-start>
+  <v-container grid-list-xl justify-start>
     <v-layout row wrap>
       <v-flex v-for="(item, i) in items" :key="i" flex xs12 md3>
         <v-hover v-slot:default="{ hover }">
           <v-card class="mx-auto" max-width="230" flat>
-            <v-img width="100%" height="250px" :src="item.img_path">
-              <div v-if="hover" class="grey" style="height: 100%; opacity:.3" />
-            </v-img>
-            <v-card-title>{{ item.title }}</v-card-title>
+            <router-link :to="`/post/${item.id}`">
+              <v-img width="100%" height="250px" :src="item.img_path">
+                <div v-if="hover" class="grey" style="height: 100%; opacity:.3" />
+              </v-img>
+              <v-card-title>{{ item.title }}</v-card-title>
+            </router-link>
             <v-card-text>
               <div>{{ item.date }}</div>
               <span class="text--primary">
@@ -25,6 +27,7 @@ export default {
   data: () => ({
     items: [
       {
+        id: '1',
         title: '자바스크립트 async와 await',
         date: 'July 30, 2019',
         subtitle:
@@ -35,6 +38,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: '이벤트 버블링, 이벤트 캡처 그리고 이벤트 위임까지',
         date: 'March 30, 2019',
         subtitle:
@@ -45,6 +49,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: 'Vue.js 개발자를 위한 ES6 입문서(e북) 안내',
         date: 'May 30, 2019',
         subtitle: 'Vue.js 코딩을 더 편하게 해줄 주요 ES6 문법을 알아봅니다.',
@@ -54,6 +59,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: '웹 개발할 때 알아두면 좋은 리눅스 기본 명령어',
         date: 'January 30, 2019',
         subtitle:
@@ -64,6 +70,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: '자바스크립트 비동기 처리와 콜백 함수',
         date: 'December 29, 2018',
         subtitle:
@@ -74,6 +81,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: '자바스크립트 Promise 쉽게 이해하기',
         date: 'July 30, 2018',
         subtitle:
@@ -84,6 +92,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: '(중급) Vue.js 라우터 네비게이션 가드 알아보기',
         date: 'April 30, 2018',
         subtitle:
@@ -104,6 +113,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: '자바스크립트 코딩할 줄 모르는 사람이 필요한가요?',
         date: 'July 1, 2017',
         subtitle:
@@ -114,6 +124,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: 'Webpack(웹팩) 캐싱 전략',
         date: 'December 10, 2017',
         subtitle:
@@ -124,6 +135,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: '최신 프론트엔드 치트 시트(Cheat Sheet) 한눈에 보기',
         date: 'November 21, 2017',
         subtitle:
@@ -134,6 +146,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: '자바스크립트의 동작원리: 엔진, 런타임, 호출 스택',
         date: 'August 15, 2017',
         subtitle:
@@ -144,6 +157,7 @@ export default {
         )}`
       },
       {
+        id: '1',
         title: '자바스크립트의 동작원리: 엔진, 런타임, 호출 스택',
         date: 'August 15, 2017',
         subtitle:
@@ -158,3 +172,9 @@ export default {
 }
 </script>
 
+<style scoped>
+a {
+  color: black;
+  text-decoration: none;
+}
+</style>
