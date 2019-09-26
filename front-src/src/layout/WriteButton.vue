@@ -1,0 +1,14 @@
+<template>
+  <v-btn
+    fab
+    fixed
+    bottom
+    right
+    color="secondary"
+    href="https://github.com/qnwlqnwlxm/mbio"
+    target="_blank"
+    rel="noopener"
+  >
+    <v-icon>mdi-pencil</v-icon>
+  </v-btn>
+</template>

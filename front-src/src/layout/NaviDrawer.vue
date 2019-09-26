@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer" absolute temporary>
+  <v-navigation-drawer v-model="drawer" app temporary>
     <v-list>
       <v-list-item v-for="(item, i) in menus" :key="i" :to="resolvePath(item.path)">
         <v-list-item-content v-if="!item.hidden && item.meta" v-text="item.meta.title" />
