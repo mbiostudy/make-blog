@@ -18,43 +18,43 @@ public class BlogApplication {
     SpringApplication.run(BlogApplication.class);
   }
 
-  @Bean
-  public CommandLineRunner testJpa(BoardRepository repository) {
-    return (args) -> {
-      // save a couple of board
-      repository.save(new Board("Gwangtae","First", "contents1", "2019-09-07"));
-      repository.save(new Board("Jihong","Second", "contents2", "2019-09-07"));
-      repository.save(new Board("Sangjun","Third", "contents3", "2019-09-07"));
-      repository.save(new Board("Youngsun","Fourth", "contents4", "2019-09-07"));
-
-      // fetch all board vo
-      log.info("Board found with findAll():");
-      log.info("-------------------------------");
-      for (Board board : repository.findAll()) {
-        log.info(board.toString());
-      }
-      log.info("");
-
-      // fetch an individual board by ID
-      repository.findById(1L)
-          .ifPresent(board -> {
-            log.info("Board found with findById(1L):");
-            log.info("--------------------------------");
-            log.info(board.toString());
-            log.info("");
-          });
-
-      // fetch board by author
-      log.info("board found with findByAuthor('Sangjun'):");
-      log.info("--------------------------------------------");
-      repository.findByAuthor("Sangjun").forEach(Sangjun -> {
-        log.info(Sangjun.toString());
-      });
-      // for (Customer bauer : repository.findByLastName("Bauer")) {
-      // 	log.info(bauer.toString());
-      // }
-      log.info("");
-    };
-  }
+//  @Bean
+//  public CommandLineRunner testJpa(BoardRepository repository) {
+//    return (args) -> {
+//      // save a couple of board
+//      repository.save(new Board("Gwangtae","First", "contents1", "2019-09-07"));
+//      repository.save(new Board("Jihong","Second", "contents2", "2019-09-07"));
+//      repository.save(new Board("Sangjun","Third", "contents3", "2019-09-07"));
+//      repository.save(new Board("Youngsun","Fourth", "contents4", "2019-09-07"));
+//
+//      // fetch all board vo
+//      log.info("Board found with findAll():");
+//      log.info("-------------------------------");
+//      for (Board board : repository.findAll()) {
+//        log.info(board.toString());
+//      }
+//      log.info("");
+//
+//      // fetch an individual board by ID
+//      repository.findById(1L)
+//          .ifPresent(board -> {
+//            log.info("Board found with findById(1L):");
+//            log.info("--------------------------------");
+//            log.info(board.toString());
+//            log.info("");
+//          });
+//
+//      // fetch board by author
+//      log.info("board found with findByAuthor('Sangjun'):");
+//      log.info("--------------------------------------------");
+//      repository.findByAuthor("Sangjun").forEach(Sangjun -> {
+//        log.info(Sangjun.toString());
+//      });
+//      // for (Customer bauer : repository.findByLastName("Bauer")) {
+//      // 	log.info(bauer.toString());
+//      // }
+//      log.info("");
+//    };
+//  }
 
 }

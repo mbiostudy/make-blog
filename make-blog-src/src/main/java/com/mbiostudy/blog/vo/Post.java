@@ -8,15 +8,6 @@ public class Post {
 
   protected Post() {}
 
-  public Post(String categoryId, String title, String author, String contents, Date regDate, Date updtDate) {
-    this.categoryId = categoryId;
-    this.title = title;
-    this.author = author;
-    this.contents = contents;
-    this.regDate = regDate;
-    this.updtDate = updtDate;
-  }
-
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
   private Long postId;
@@ -26,6 +17,12 @@ public class Post {
 
   @Column
   private String title;
+
+  @Column
+  private String subTitle;
+
+  @Column
+  private String imagePath;
 
   @Column
   private String author;
@@ -95,12 +92,30 @@ public class Post {
     this.updtDate = updtDate;
   }
 
+  public String getSubTitle() {
+    return subTitle;
+  }
+
+  public void setSubTitle(String subTitle) {
+    this.subTitle = subTitle;
+  }
+
+  public String getImagePath() {
+    return imagePath;
+  }
+
+  public void setImagePath(String imagePath) {
+    this.imagePath = imagePath;
+  }
+
   @Override
   public String toString() {
     return "Post{" +
             "postId=" + postId +
             ", categoryId='" + categoryId + '\'' +
             ", title='" + title + '\'' +
+            ", subTitle='" + subTitle + '\'' +
+            ", imagePath='" + imagePath + '\'' +
             ", author='" + author + '\'' +
             ", contents='" + contents + '\'' +
             ", regDate=" + regDate +
