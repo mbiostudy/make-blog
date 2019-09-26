@@ -3,68 +3,37 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Layout from '@/layout'
-
 export const constantRoutes = [
   {
     path: '/',
-    component: Layout,
+    component: () => import('@/views/Home/index'),
     meta: { title: 'Home' }
   },
   {
     path: '/about',
-    component: Layout,
-    meta: { title: 'About' },
-    children: [
-      {
-        path: '',
-        component: () => import('@/views/About.vue')
-      }
-    ]
+    component: () => import('@/views/About.vue'),
+    meta: { title: 'About' }
   },
   {
     path: '/board',
-    component: Layout,
-    meta: { title: 'Board' },
-    children: [
-      {
-        path: '',
-        component: () => import('@/views/BoardList.vue')
-      }
-    ]
-  },
-  {
-    path: '/post/:id?',
-    component: Layout,
-    hidden: true,
-    children: [
-      {
-        path: '',
-        component: () => import('@/views/detailPost/index')
-      }
-    ]
+    component: () => import('@/views/BoardList.vue'),
+    meta: { title: 'Board' }
   },
   {
     path: '/write',
-    component: Layout,
-    meta: { title: '글작성' },
-    children: [
-      {
-        path: '',
-        component: () => import('@/views/editor/index')
-      }
-    ]
+    component: () => import('@/views/editor/index'),
+    meta: { title: '글작성' }
   },
   {
-    path: '/redirect',
-    component: Layout,
+    path: '/post/:id?',
+    component: () => import('@/views/detailPost/index'),
     hidden: true,
-    children: [
-      {
-        path: '/redirect/:path*',
-        component: () => import('@/views/redirect/index')
-      }
-    ]
+    meta: { title: '글상세보기' }
+  },
+  {
+    path: '/redirect/:path*',
+    component: () => import('@/views/redirect/index'),
+    hidden: true
   },
   {
     path: '/404',

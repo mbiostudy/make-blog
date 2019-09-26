@@ -1,0 +1,41 @@
+.v-application .md code {
+  font-weight: initial;
+  background-color: #474949;
+  color: #d1d9e1;
+  font-size: 95%;
+  display: inline-block;
+  padding: 1px 5px 1px 5px;
+  margin: 2px;
+  margin-bottom: 12px;
+}
+/* Code block */
+.v-application .md code.hljs {
+  display: block;
+  padding: 0.5em;
+}
+.v-application .md code:before,
+.v-application .md code:after {
+  content: initial;
+}
+
+/* Change h1, h2... styles to make markdown format better */
+/* .v-application .md h1 {
+  font-size: 1.8em;
+  margin: 0.3em 0 0.6em 0;
+}
+
+.v-application .md h2 {
+  margin: 0.25em 0;
+}
+
+.v-application .md h3 {
+  margin: 0.12em 0;
+}
+
+.v-application .md p {
+  margin-bottom: 12px;
+}
+
+.markdown-text {
+  word-wrap: break-word;
+} */
