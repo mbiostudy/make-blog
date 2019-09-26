@@ -34,7 +34,7 @@ spec:
       containers:
       - name: front
         imagePullPolicy: Always
-        image: mbiostudyregistry.azurecr.io/make-blog-front:1.0-SNAPSHOT
+        image: mbiostudyregistry.azurecr.io/make-blog-front:1.1-SNAPSHOT
         resources:
           requests:
             memory: "64Mi"
